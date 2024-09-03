@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Wolta'
+copyright = '2024, Sadık Efe Kartav'
+author = 'iamalreadynoob'
 
 release = '0.1'
-version = '0.1.0'
+version = '0.3.0'
 
 # -- General configuration
 
