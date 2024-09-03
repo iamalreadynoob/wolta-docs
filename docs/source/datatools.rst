@@ -14,3 +14,6 @@ Parameters          Datatype            Default Value
 df                  pandas dataframe    -
 print_columns       boolean             False
 =============       ================    ==============
+
+.. attention::
+    It returns a dict if and only if print_columns is True. Unless it does not return anything.
