@@ -171,3 +171,128 @@ Priority (in return)    Returns    Datatype    Condition
 4                       min_val    list        always
 ====================    =======    ========    =========
 
+
+load_by_parts
+_______________
+
+It enables to load multiple subsets of a dataset into a big one with extensive options.
+
+=================    ========    =============
+Parameters           Datatype    Default Value
+=================    ========    =============
+paths                list        -
+strategy             string      default
+deleted_columns      list        None
+print_description    boolean     False
+shuffle              boolean     False
+encoding             string      utf-8
+=================    ========    =============
+
+.. note::
+    strategy can have two different values: 'default' and 'efficient'. The only difference between them is that efficient detects datatypes by using calculate_bounds function. It is not suggested if it is not strictly required.
+
+.. note::
+    encoding can have all valid values for encoding parameter of the pandas' read_csv function.
+
+====================    =======    ================    =========
+Priority (in return)    Returns    Datatype            Condition
+====================    =======    ================    =========
+1                       df         pandas dataframe    always
+====================    =======    ================    =========
+
+create_chunks
+_______________
+
+It splits the dataset into small csv files.
+
+=================    ========    =============
+Parameters           Datatype    Default Value
+=================    ========    =============
+path                 string      -
+sample_amount        integer     -
+target_dir           string      None
+print_description    boolean     False
+chunk_name           string      part
+=================    ========    =============
+
+.. attention::
+    This function does not return any value as result.
+
+transform_data
+________________
+
+It transforms data by using some predetermined techniques. Further reading, you may read :ref:`transformation` article.
+
+==========    =======================    =============
+Parameters    Datatype                   Default Value
+==========    =======================    =============
+X             multi dimensional array    -
+y             1D array                   -
+strategy      string                     log-m
+==========    =======================    =============
+
+.. note::
+    strategy can have these values: 'log', 'log-m', 'log2', 'log2-m', 'log10', 'log10-m', 'sqrt', 'sqrt-m', 'cbrt'
+
+====================    =======    =======================    =====================
+Priority (in return)    Returns    Datatype                   Condition
+====================    =======    =======================    =====================
+1                       X          multi dimensional array    always
+2                       y          1D array                   always
+3                       amin_x     integer or float           strategy ends with -m
+4                       amin_y     integer or float           strategy ends with -m
+====================    =======    =======================    =====================
+
+transform_pred
+_______________
+
+It may seem like a reverse function for transform_data. For further reading, you may read :ref:`transformation` article.
+
+==========    ================    =============
+Parameters    Datatype            Default Value
+==========    ================    =============
+y_pred        1D array            -
+strategy      string              log-m
+amin_y        integer or float    0
+==========    ================    =============
+
+.. note::
+    strategy can have these values: 'log', 'log-m', 'log2', 'log2-m', 'log10', 'log10-m', 'sqrt', 'sqrt-m', 'cbrt', 'cbrt-m'
+
+====================    =======    ========    =========
+Priority (in return)    Returns    Datatype    Condition
+====================    =======    ========    =========
+1                       y_pred     1D array    always
+====================    =======    ========    =========
+
+make_categorical
+____________________
+
+It turns continuous values into discrete ones by using normal distribution. The function separates three groups the given data with this approach. For further reading, you may read :ref:`distribution` article.
+
+==========    ========    =============
+Parameters    Datatype    Default Value
+==========    ========    =============
+y             1D array    -
+strategy      string      normal
+==========    ========    =============
+
+.. note::
+    strategy can have these values: 'normal' and 'normal-extra'.
+
+is_normal
+______________
+
+It controls that given set behaves like normal distribution or not.
+
+==========    ========    =============
+Parameters    Datatype    Default Value
+==========    ========    =============
+y             1D array    -
+==========    ========    =============
+
+====================    =======    ========    =========
+Priority (in return)    Returns    Datatype    Condition
+====================    =======    ========    =========
+1                       result     boolean     always
+====================    =======    ========    =========
