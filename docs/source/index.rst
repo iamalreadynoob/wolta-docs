@@ -18,4 +18,7 @@ Contents
    overview
    installation
    datatools
+   modeltools
+   featuretools
+   progressivetools
    further
