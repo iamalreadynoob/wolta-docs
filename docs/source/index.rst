@@ -16,6 +16,7 @@ Contents
 .. toctree::
 
    overview
+   updates
    installation
    datatools
    modeltools

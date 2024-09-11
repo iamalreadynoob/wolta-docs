@@ -1,7 +1,7 @@
 Overview
 ===========
 
-Wolta contains five initial parts, these are:
+Wolta contains four initial parts, these are:
 
 1. data_tools
 2. model_tools
