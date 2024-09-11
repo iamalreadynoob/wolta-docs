@@ -3,7 +3,7 @@ Welcome to Wolta's documentation!
 
 **Wolta** is a Python library for data science. It is designed to make easy data analysis, data manipulation, model training.
 
-Check out the :doc:`overview` section for further information. Also, for the other details, check :doc:`otherstuff`.
+Check out the :doc:`overview` section for further information and the you can find the source code `there <https://github.com/iamalreadynoob/wolta>`_. Also, for the other details, check :doc:`otherstuff`.
 
 .. tip::
 
