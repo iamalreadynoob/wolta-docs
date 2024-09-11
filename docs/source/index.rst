@@ -3,11 +3,20 @@ Welcome to Wolta's documentation!
 
 **Wolta** is a Python library for data science. It is designed to make easy data analysis, data manipulation, model training.
 
-Check out the :doc:`overview` section for further information. For installation, check :doc:`installation`
+Check out the :doc:`overview` section for further information. Also, for the other details, check :doc:`otherstuff`.
 
 .. tip::
 
    Wolta name comes from a Polish folk dance.
+
+Installation
+_______________
+
+To install Wolta, run this command:
+
+.. code-block::
+    pip install wolta
+
 
 Contents
 --------
@@ -16,7 +25,6 @@ Contents
 
    overview
    updates
-   installation
    datatools
    modeltools
    featuretools
