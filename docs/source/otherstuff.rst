@@ -20,7 +20,7 @@ ____________
 
 While creating Wolta, I listened to Radiohead a lot. Which is why, I will give a place to these great band with my favorite Radiohead album:
 
-.. image:: pics/in.jpg
+.. image:: pics/inrain.gif
 
 Donation
 _________
