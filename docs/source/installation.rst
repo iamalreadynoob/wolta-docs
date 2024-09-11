@@ -3,6 +3,5 @@ Installation
 
 To install Wolta, run this command:
 
-``
-pip install wolta
-``
+.. code-block::
+    pip install wolta
