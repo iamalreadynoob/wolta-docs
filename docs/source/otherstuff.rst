@@ -15,9 +15,6 @@ ________________
 
 In early 2024, I watched a movie called The Peasants at the theatre, and I really loved it. There was a wolta dance scene and I wanted to name my library with this name.
 
-.. raw:: html
-    <div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.imdb.com/title/tt10651230/" data-iframely-url="//iframely.net/GysM0TA"></a></div></div><script async src="//iframely.net/embed.js"></script>
-
 Radiohead
 ____________
 
