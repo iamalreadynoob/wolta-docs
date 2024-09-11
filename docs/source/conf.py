@@ -7,7 +7,7 @@ copyright = '2024, Sadık Efe Kartav'
 author = 'iamalreadynoob'
 
 release = '0.1'
-version = '0.3.0'
+version = '0.3.1'
 
 # -- General configuration
 
