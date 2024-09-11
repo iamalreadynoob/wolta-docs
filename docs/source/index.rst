@@ -14,8 +14,7 @@ _______________
 
 To install Wolta, run this command:
 
-.. code::
-    pip install wolta
+ >>> pip install wolta
 
 
 Contents
