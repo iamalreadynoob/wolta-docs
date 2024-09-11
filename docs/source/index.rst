@@ -22,3 +22,4 @@ Contents
    featuretools
    progressivetools
    further
+   otherstuff
