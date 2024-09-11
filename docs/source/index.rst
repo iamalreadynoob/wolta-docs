@@ -16,12 +16,6 @@ To install Wolta, run this command:
 
  >>> pip install wolta
 
-Or you can download it with this way:
-
-.. code-block:: python
-    !pip install wolta
-
-
 Contents
 --------
 
