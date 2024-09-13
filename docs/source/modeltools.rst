@@ -347,7 +347,7 @@ These are the valid keywords for algorithms:
 =========    =================    ===============================================================================
 algo_type    algorithm keyword    class
 =========    =================    ===============================================================================
-clf          all                  if the list has it at index zero then it presumes that it contains all keywords
+clf/reg      all                  if the list has it at index zero then it presumes that it contains all keywords
 clf          cat                  CatBoostClassifier
 clf          ada                  AdaBoostClassifier
 clf          dtr                  DecisionTreeClassifier
@@ -362,7 +362,17 @@ clf          bnb                  BernoulliNB
 clf          svc                  SVC
 clf          per                  Perceptron
 clf          mnb                  MultinomialNB
+reg          cat                  CatBoostRegressor
+reg          ada                  AdaBoostRegressor
+reg          dtr                  DecisionTreeRegressor
+reg          raf                  RandomForestRegressor
+reg          lbm                  LGBMRegressor
+reg          ext                  ExtraTreeRegressor
+reg          lin                  LinearRegression
+reg          knn                  KNeighborsRegressor
+reg          svr                  SVR
 =========    =================    ===============================================================================
+
 
 ====================    =======    ========    =========
 Priority (in return)    Returns    Datatype    Condition
@@ -435,3 +445,65 @@ Priority (in return)    Returns    Datatype    Condition
 ====================    =======    ========    =========
 1                       y_pred     1D array    always
 ====================    =======    ========    =========
+
+find_deflection
+________________
+
+It analyses the difference between prediction and actual values for regression problems and returns a report about how successful the prediction was.
+
+===============    ================    =============
+Parameters         Datatype            Default Value
+===============    ================    =============
+y_test             1D array            -
+y_pred             1D array            -
+arr                boolean             True
+avg                boolean             False
+gap                integer or float    None
+gap_type           string              num
+dif_type           string              f-i
+avg_w_abs          boolean             True
+success_indexes    boolean             False
+===============    ================    =============
+
+These are the valid keywords for gap_type:
+
+========    ======================================================================
+gap_type    succession condition
+========    ======================================================================
+exact       prediction = actual
+num         actual - gap <= prediction <= actual + gap
+num+        actual <= prediction <= actual + gap
+num-        actual - gap <= prediction <= actual
+per         (100 - gap) * actual / 100 <= prediction <= (100 + gap) * actual / 100
+per+        actual <= prediction <= (100 + gap) * actual / 100
+per-        (100 - gap) * actual / 100 <= prediction <= actual
+========    ======================================================================
+
+====================    =========    ========    =======================
+Priority (in return)    Returns      Datatype    Condition
+====================    =========    ========    =======================
+1                       diffs        list        arr is True
+2                       avg_score    float       avg is True
+3                       succ         integer     gap is not None
+4                       indexes      list        success_indexes is True
+====================    =========    ========    =======================
+
+.. note::
+    diffs is the list full of with the differences between actual and predicted values.
+
+These are the supported methods for difference calculation:
+
+========    ==================================
+dif_type    calculation
+========    ==================================
+f-i         final (prediction) - init (actual)
+i-f         init (actual) - final (prediction)
+abs         absolute
+========    ==================================
+
+.. note::
+    avg_score equals the arithmetic mean of the diffs set.
+
+.. note::
+    succ is the amount of the succeeded predictions according to the gap condition. indexes hold the index information, which are successful predictions.
+

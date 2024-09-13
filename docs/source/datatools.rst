@@ -383,68 +383,6 @@ Priority (in return)    Returns        Datatype      Condition
 1                       gen_results    dictionary    if get_dict is True
 ====================    ===========    ==========    ===================
 
-find_deflection
-________________
-
-It analyses the difference between prediction and actual values for regression problems and returns a report about how successful the prediction was.
-
-===============    ================    =============
-Parameters         Datatype            Default Value
-===============    ================    =============
-y_test             1D array            -
-y_pred             1D array            -
-arr                boolean             True
-avg                boolean             False
-gap                integer or float    None
-gap_type           string              num
-dif_type           string              f-i
-avg_w_abs          boolean             True
-success_indexes    boolean             False
-===============    ================    =============
-
-These are the valid keywords for gap_type:
-
-========    ======================================================================
-gap_type    succession condition
-========    ======================================================================
-exact       prediction = actual
-num         actual - gap <= prediction <= actual + gap
-num+        actual <= prediction <= actual + gap
-num-        actual - gap <= prediction <= actual
-per         (100 - gap) * actual / 100 <= prediction <= (100 + gap) * actual / 100
-per+        actual <= prediction <= (100 + gap) * actual / 100
-per-        (100 - gap) * actual / 100 <= prediction <= actual
-========    ======================================================================
-
-====================    =========    ========    =======================
-Priority (in return)    Returns      Datatype    Condition
-====================    =========    ========    =======================
-1                       diffs        list        arr is True
-2                       avg_score    float       avg is True
-3                       succ         integer     gap is not None
-4                       indexes      list        success_indexes is True
-====================    =========    ========    =======================
-
-.. note::
-    diffs is the list full of with the differences between actual and predicted values.
-
-These are the supported methods for difference calculation:
-
-========    ==================================
-dif_type    calculation
-========    ==================================
-f-i         final (prediction) - init (actual)
-i-f         init (actual) - final (prediction)
-abs         absolute
-========    ==================================
-
-.. note::
-    avg_score equals the arithmetic mean of the diffs set.
-
-.. note::
-    succ is the amount of the succeeded predictions according to the gap condition. indexes hold the index information, which are successful predictions.
-
-
 extract_float
 _______________
 
@@ -462,48 +400,6 @@ Priority (in return)    Returns    Datatype    Condition
 ====================    =======    ========    =========
 1                       column     1D Array    always
 ====================    =======    ========    =========
-
-list_deletings
-_______________
-
-It analyses the dataframe and shows or deletes columns that were found to be improper by the algorithm.
-
-=================    ==================    =============
-Parameters           Datatype              Default Value
-=================    ==================    =============
-df                   pandas dataframe      -
-extra                list                  None
-del_null             boolean               True
-null_tolerance       integer or float      20
-del_single           boolean               True
-del_almost_single    boolean               False
-almost_tolerance     integer or float      50
-suggest_extra        boolean               True
-return_extra         boolean               False
-unique_tolerance     integer or boolean    10
-=================    ==================    =============
-
-.. note::
-    The column which their names are inside the extra library are deleted directly.
-
-.. note::
-    While del_null is true, the columns that have null values greater than null_tolerance% of the total sample amount are deleted.
-
-.. note::
-    If del_single is true, then the columns that have only one different value are deleted.
-
-.. note::
-    While del_almost_single is true, the columns that have the same value that more than almost_tolerance% of the total sample amount are deleted.
-
-.. note::
-    While suggest_extra is true, the string data held columns that have unique values greater than unique_tolerance% of the total sample amount are printed out in the console. The list of columns is also returned if return_extra is true.
-
-====================    =======    ================    ====================
-Priority (in return)    Returns    Datatype            Condition
-====================    =======    ================    ====================
-1                       df         pandas dataframe    always
-2                       columns    list                return_extra is True
-====================    =======    ================    ====================
 
 col_counts
 ____________
@@ -571,40 +467,6 @@ Priority (in return)    Returns    Datatype    Condition
 2                       words      list        get_words is True
 ====================    =======    ========    ===================
 
-multi_split
-____________
-
-It is designed to create different arrays with requested threshold values for train-test splitting.
-
-=============    ================    =============
-Parameters       Datatype            Default Value
-=============    ================    =============
-df               pandas dataframe    -
-test_size        float               -
-output           string              -
-threshold_set    list                -
-=============    ================    =============
-
-.. note::
-    test_size must be between 0 and 1.
-
-.. attention::
-    The very first multidimensional array inside lists is always created without any selection.
-
-.. attention::
-    The output arrays are created in order to the order inside threshold_set.
-
-.. attention::
-    Output arrays (y_train and y_test) are always the same for every output set. It is because measuring correctly the success rate between different approaches.
-
-====================    ========    ========    =========
-Priority (in return)    Returns     Datatype    Condition
-====================    ========    ========    =========
-1                       X_trains    list        always
-2                       X_tests     list        always
-3                       y_train     1D array    always
-4                       y_test      1D array    always
-====================    ========    ========    =========
 
 expand_df
 ___________
@@ -624,3 +486,63 @@ Priority (in return)    Returns    Datatype            Condition
 ====================    =======    ================    =========
 1                       df         pandas dataframe    always
 ====================    =======    ================    =========
+
+split_as_df
+____________
+
+It splits X and y arrays into train and test pandas dataframes instead of arrays.
+
+============    ======================    =============
+Parameters      Datatype                  Default Value
+============    ======================    =============
+X               multidimensional array    -
+y               1D array                  -
+features        list                      -
+output          string                    -
+test_size       float                     -
+random_state    int                       42
+shuffle         boolean                   True
+stratify        1D array                  None
+============    ======================    =============
+
+.. note::
+    features are the list of the names of columns in the X array. output is the name of the column in the y array.
+
+====================    =======    ================    =========
+Priority (in return)    Returns    Datatype            Condition
+====================    =======    ================    =========
+1                       dftrain    pandas dataframe    always
+2                       dftest     pandas dataframe    always
+====================    =======    ================    =========
+
+train_test_val_split
+_______________________
+
+It splits the data into three groups: train, validation and test.
+
+================    ======================    =============
+Parameters          Datatype                  Default Value
+================    ======================    =============
+X                   multidimensional array    -
+y                   1D array                  -
+test_size           float                     -
+val_size            float                     -
+random_state        int                       42
+shuffle             boolean                   True
+stratify            1D array                  None
+stratify_for_val    boolean                   True
+================    ======================    =============
+
+.. attention::
+    The ratios given as test_size and val_size must be for the sum of the data.
+
+====================    =======    ======================    =========
+Priority (in return)    Returns    Datatype                  Condition
+====================    =======    ======================    =========
+1                       X_train    multidimensional array    always
+2                       X_test     multidimensional array    always
+3                       X_val      multidimensional array    always
+4                       y_train    1D array                  always
+5                       y_test     1D array                  always
+6                       y_val      1D array                  always
+====================    =======    ======================    =========

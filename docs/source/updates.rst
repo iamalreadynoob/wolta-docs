@@ -1,6 +1,15 @@
 What's new?
 ==============
 
+Version 0.3.2. Changes
+________________________
+
+- find_deflection was moved from data_tools to model_tools.
+- list_deletings was moved from data_tools to feature_tools
+- multi_split was moved from data_tools to feature_tools.
+- train_test_val_split was added.
+- Regression algorithms were added into get_models.
+
 Version 0.3.1. Changes
 ________________________
 
