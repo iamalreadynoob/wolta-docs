@@ -546,3 +546,54 @@ Priority (in return)    Returns    Datatype                  Condition
 5                       y_test     1D array                  always
 6                       y_val      1D array                  always
 ====================    =======    ======================    =========
+
+synthetic_expand
+___________________
+
+It generates synthetic data based on actual data. It is designed to create datasets for educational purposes in data science.
+
+============    ================    =============
+Parameters      Datatype            Default Value
+============    ================    =============
+df              pandas dataframe    -
+feature_info    dictionary          -
+shape_zero      integer             -
+============    ================    =============
+
+.. attention::
+    feature_info must hold every requested feature name inside its keys from the dataframe. Values may take two different values: continuous and discrete.
+
+====================    =======    ================    =========
+Priority (in return)    Returns    Datatype            Condition
+====================    =======    ================    =========
+1                       df         pandas dataframe    always
+====================    =======    ================    =========
+
+multi_split
+_____________
+
+It splits the dataset, which is multi label. The function shuffles the dataset n times and, each time, seeks for the same sample-amount distribution in the test for classes in every label.
+
+==========    ================    =============
+Parameters    Datatype            Default Value
+==========    ================    =============
+df            pandas dataframe    -
+labels        list                -
+test_size     float               -
+times         integer             50
+==========    ================    =============
+
+.. note::
+    labels holds the list of the label names in the dataframe.
+
+====================    ========    ======================    =========
+Priority (in return)    Returns     Datatype                  Condition
+====================    ========    ======================    =========
+1                       X_train     multidimensional array    always
+2                       X_test      multidimensional array    always
+3                       y_trains    dictionary                always
+4                       y_tests     dictionary                always
+====================    ========    ======================    =========
+
+.. attention::
+    y_trains and y_tests have a key value structure as  label name - 1D array.

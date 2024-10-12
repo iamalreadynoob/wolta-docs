@@ -1,6 +1,18 @@
 What's new?
 ==============
 
+Version 0.3.3 Changes
+_______________________
+
+- synthetic_expand was added.
+- multi_split was added.
+- get_extensions was added.
+- dataset_size_same was added.
+- dataset_ratio_same was added.
+- crop was added.
+- fill was added.
+- make_square was added.
+
 Version 0.3.2. Changes
 ________________________
 

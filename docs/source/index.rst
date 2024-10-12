@@ -25,6 +25,7 @@ Contents
    updates
    datatools
    modeltools
+   visualtools
    featuretools
    progressivetools
    further
