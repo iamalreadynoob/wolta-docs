@@ -597,3 +597,43 @@ Priority (in return)    Returns     Datatype                  Condition
 
 .. attention::
     y_trains and y_tests have a key value structure as  label name - 1D array.
+
+
+corr_analyse
+______________
+
+It calculates the correlation between each feature in the dataset. After calculation, it also groups them by respect to their strength.
+
+.. attention::
+    Each correlation value must be between -1 and 1. In the grouping phase, the range is accepted between 0 and 1, the negative side is also accepted as symmetric to the positive side. After that, the new range is split into four groups, which are 'uncorrelated', 'weak', 'strong' and 'perfect'.
+
+============    ===================
+group           interval
+============    ===================
+uncorrelated    0 <= y <= un_w
+weak            un_w < score <= w_s
+strong          w_s < score <= s_p
+perfect         s_p < score <= 1
+============    ===================
+
+==========    ========    =============
+Parameters    Datatype    Default Value
+==========    ========    =============
+array         2D array    -
+columns       list        -
+un_w          float       0.1
+w_s           float       0.5
+s_p           float       0.9
+verbose       boolean     True
+get_matrix    boolean     False
+==========    ========    =============
+
+.. note::
+    The function always returns a dictionary with keys 'columns' and 'score'.
+
+====================    =======    ==========    ==================
+Priority (in return)    Returns    Datatype      Condition
+====================    =======    ==========    ==================
+1                       results    dictionary    always
+2                       matrix     2D array      get_matrix is True
+====================    =======    ==========    ==================

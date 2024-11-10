@@ -1,6 +1,13 @@
 What's new?
 ==============
 
+Version 0.3.4 Changes
+______________________
+
+- dir_split was added.
+- cls_img_counter was added.
+- corr_analyse was added.
+
 Version 0.3.3 Changes
 _______________________
 
