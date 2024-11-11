@@ -8,7 +8,7 @@ My name is Sadık. I live in Istanbul and I am a third year computer engineering
 
 .. image:: pics/aizen.gif
 
-If you want to have contact with me, you can find me on `linkedin <www.linkedin.com/in/sadık-efe-kartav>`_. Or just mail me: sadikefe69@gmail.com
+If you want to have contact with me, you can find me on `linkedin <www.linkedin.com/in/sadık-efe-kartav>`_ and `twitter <https://x.com/sadothedev>`_. Or just mail me: sadikefe69@gmail.com
 
 Why Wolta name?
 ________________
@@ -18,7 +18,7 @@ In early 2024, I watched a movie called The Peasants at the theatre, and I reall
 Radiohead
 ____________
 
-While creating Wolta, I listened to Radiohead a lot. Which is why, I will give a place to these great band with my favorite Radiohead album:
+While creating Wolta, I listened to Radiohead a lot. Which is why, I give a place to this great band with my favorite Radiohead album:
 
 .. image:: pics/inrain.gif
 

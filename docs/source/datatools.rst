@@ -626,7 +626,11 @@ w_s           float       0.5
 s_p           float       0.9
 verbose       boolean     True
 get_matrix    boolean     False
+csv_path      string      None
 ==========    ========    =============
+
+.. note::
+    If csv_path is not none then the scores are logged in a csv file.
 
 .. note::
     The function always returns a dictionary with keys 'columns' and 'score'.

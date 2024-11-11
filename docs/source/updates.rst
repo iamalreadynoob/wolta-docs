@@ -1,6 +1,11 @@
 What's new?
 ==============
 
+Version 0.3.5 Changes
+______________________
+
+- bugs fixed in corr_analyse and expanded its functionality.
+
 Version 0.3.4 Changes
 ______________________
 

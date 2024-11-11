@@ -6,8 +6,8 @@ project = 'Wolta'
 copyright = '2024, Sadık Efe Kartav'
 author = 'iamalreadynoob'
 
-release = '0.3'
-version = '0.3.4'
+release = '0.4'
+version = '0.3.5'
 
 # -- General configuration
 
