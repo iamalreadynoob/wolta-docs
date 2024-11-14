@@ -25,6 +25,7 @@ Priority (in return)    Returns    Datatype    Condition
 ====================    =======    ========    =========
 
 .. code:: python
+
     import pandas as pd
     from wolta.data_tools import col_types
 
