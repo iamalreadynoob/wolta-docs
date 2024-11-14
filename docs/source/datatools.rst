@@ -24,6 +24,21 @@ Priority (in return)    Returns    Datatype    Condition
 1                       types      list        always
 ====================    =======    ========    =========
 
+.. code:: python
+    import pandas as pd
+    from wolta.data_tools import col_types
+
+    df = pd.read_csv('data.csv')
+
+    columns = list(df.columns)
+    types = col_types(df)
+
+    # prints out the datatype for each column
+    for i in range(len(columns)):
+        print('{}: {}'.format(columns[i], types[i]))
+
+    #or just
+    col_types(df, print_columns=True)
 
 unique_amounts
 __________
