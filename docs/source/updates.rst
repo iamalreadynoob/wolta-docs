@@ -1,6 +1,14 @@
 What's new?
 ==============
 
+Version 0.3.6 Changes
+_______________________
+
+- scale_df was added.
+- rand_arr was added.
+- get_measure was added.
+- corr_high was added.
+
 Version 0.3.5 Changes
 ______________________
 

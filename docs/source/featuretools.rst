@@ -119,3 +119,26 @@ Priority (in return)    Returns     Datatype    Condition
 3                       y_train     1D array    always
 4                       y_test      1D array    always
 ====================    ========    ========    =========
+
+rand_arr
+__________
+
+It creates a one dimensional randomized array with sticking on a strategy.
+
+ ============ ========== ===============
+  Parameters   Datatype   Default Value
+ ============ ========== ===============
+  outputs      list       -
+  values       int list   None
+  strategy     string     equal
+  arr_size     int        1
+ ============ ========== ===============
+
+.. note::
+    There are three determined strategies: 'equal', 'weighted' and 'piled'. In 'equal', each output has the same probability. In 'weighted', the ith output has values[i] / sum(values) probability to come out. With a small difference in 'piled', the ith output has (values[i]  - values[i-1] (or 0 if i is zero)) / values[-1] probability. Because of the behavior of piled, the values array must be sorted.
+
+====================    =======    ========    =========
+Priority (in return)    Returns    Datatype    Condition
+====================    =======    ========    =========
+1                       column     1D Array    always
+====================    =======    ========    =========

@@ -507,3 +507,34 @@ abs         absolute
 .. note::
     succ is the amount of the succeeded predictions according to the gap condition. indexes hold the index information, which are successful predictions.
 
+get_measure
+_____________
+
+It provides some other results for the test data in order to measure the quality of the prediction.
+
+ ============ ============= ===============
+  Parameters   Datatype      Default Value
+ ============ ============= ===============
+  y_test       1D array      -
+  measures     string list   -
+  y_train      1D array      None
+ ============ ============= ===============
+
+.. note::
+    measures may only contain these: 'majority', 'minority', 'random' and 'weighted'.
+
+ ========== ================================================
+  Measure    Use Case
+ ========== ================================================
+  majority   only the most frequent class
+  minority   only the less frequent array
+  random     random selection between classes
+  weighted   random selection due to frequencies of classes
+ ========== ================================================
+
+====================    =========    ==========    =======================
+Priority (in return)    Returns      Datatype      Condition
+====================    =========    ==========    =======================
+1                       arrays       dictionary    always
+====================    =========    ==========    =======================
+

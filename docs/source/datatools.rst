@@ -657,3 +657,49 @@ Priority (in return)    Returns    Datatype      Condition
 1                       results    dictionary    always
 2                       matrix     2D array      get_matrix is True
 ====================    =======    ==========    ==================
+
+scale_df
+____________
+
+It scales the values of the pandas dataframe and returns a pandas dataframe again. If requested, output label(s) might be excluded from this process.
+
+============    =====================    ===============
+Parameters      Datatype                 Default Value
+============    =====================    ===============
+df              pandas dataframe         -
+output          string or string list    None
+mode            string                   minmax
+params          dictionary               None
+============    =====================    ===============
+
+.. note::
+    The function supports four different scaling methods: MinMaxScaler (when mode is 'minmax'), StandardScaler (when mode is 'standard'), RobustScaler (when mode is 'robust') and MaxAbsScaler (when mode is 'maxabs').
+
+====================    =======    ==================    ==================
+Priority (in return)    Returns    Datatype              Condition
+====================    =======    ==================    ==================
+1                       df         pandas dataframe      always
+====================    =======    ==================    ==================
+
+corr_high
+___________
+
+It gets the names of the features that have a high correlation with the output label.
+
+ ============ ================== ===============================
+  Parameters   Datatype           Default Type
+ ============ ================== ===============================
+  df           pandas dataframe   -
+  output       string             -
+  strengths    string list        ['perfect', 'strong', 'weak']
+  verbose      boolean            True
+ ============ ================== ===============================
+
+.. note::
+    strengths can only contain 'perfect', 'strong', 'weak' and 'uncorrelated'.
+
+====================    ============    ==================    ==================
+Priority (in return)    Returns         Datatype              Condition
+====================    ============    ==================    ==================
+1                       feature_high    string list           always
+====================    ============    ==================    ==================
