@@ -159,3 +159,17 @@ Priority (in return)    Returns          Datatype      Condition
 ====================    =============    ==========    =========
 1                       class_amounts    dictionary    always
 ====================    =============    ==========    =========
+
+examine_sizes
+___________________
+
+It gives a brief about the sizes of the images in the dataset.
+
+==========    ========    =============
+Parameters    Datatype    Default Value
+==========    ========    =============
+paths         list        -
+==========    ========    =============
+
+.. attention::
+    This function does not return anything.

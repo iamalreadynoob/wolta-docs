@@ -1,6 +1,12 @@
 What's new?
 ==============
 
+Version 0.3.7. Changes
+________________________
+
+- examine_sizes was added.
+- bugs fixed in get_measure.
+
 Version 0.3.6 Changes
 _______________________
 
